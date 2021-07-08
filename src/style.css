@@ -6,7 +6,7 @@ a, li, button {
     cursor: pointer; 
 } 
 .dark { 
-    background: 1111; 
+    background:; 
 } 
 .container { 
     
@@ -35,11 +35,18 @@ a, li, button {
 .dialog-group > button { 
     
 } 
-.btn-green { 
-    background-color: ; 
+.btn-red { 
+    height:40px;
+    width:150px;
+    border-color:rgb(228, 79, 79) ; 
+    color:rgb(228, 79, 79);
+    background-color:rgb(92, 87, 87);
 } 
-.btn-dialog { 
-    background-color: ; 
+.btn-st { 
+   
+    background-color:rgb(92, 87, 87) ;
+    color:white;
+    border-color:white; 
 } 
 .btn-warn { 
     background-color: ; 

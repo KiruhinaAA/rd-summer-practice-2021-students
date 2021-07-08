@@ -9,19 +9,57 @@ a, li, button {
     background:; 
 } 
 .container { 
-    
+    position: absolute;
+
+margin: auto;
+
+padding: 0;
+
+top: 2.5%; left: 0; right: 0;
+
+height: 95%;
+
+width: 80%;
+
+border: 0;
+
+box-shadow: 0 0 25px 5px #ccc;
+
+color: white;
+
+min-height: 460px;
+
+min-width: 770px;
+
+max-width: 1150px;
 } 
 .header, .center, .footer,  { 
 
 } 
 .header { 
-   
+    position: absolute;
+
+    margin: auto;
+    
+    box-sizing: border-box;
 } 
 .center { 
-    
+    margin: 0 1% 0 1%;
+
+border-bottom: 1px solid #ccc;
+
+top: 0; left: 0; right: 0;
+ 
+height: 15%;
+
+text-align: center;
 } 
 .left { 
-    
+    top: 15%; 
+    left: 225px; 
+    right: 225px; 
+    bottom: 6%;
+    box-sizing: border-box;
 } 
 .right { 
    

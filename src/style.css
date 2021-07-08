@@ -92,7 +92,24 @@ box-sizing: border-box;
 .map { 
    
 } 
+.wrapl{
+    width: 200px;
+    height: 100px;
+    background: darkgray;
+    margin-left: 10px;
+    border-radius: 5px;
+    float: left;
+}
 
+.wrapr{
+    width: 200px;
+    height: 100px;
+    background: darkgray;
+    margin-right: 10px;
+    border-radius: 5px;
+    float: right;
+    text-align: left;
+}
 .clock {
     float: center;
     text-align: center;
@@ -101,16 +118,18 @@ box-sizing: border-box;
 
 }
 .right-team-data { 
-    text-align: right;
+    text-align: left;
     float: right; 
     margin-top: 20px;
-    margin-left:850px;
+    margin-right:70px;
+    color: white;
 } 
 .left-team-data { 
     text-align: left;
     float: left;
     margin-top: 20px;
-    margin-left: 30px;  
+    margin-left: 30px;
+    color: white;  
 } 
 .team-data-label { 
     font-size: 110%; 

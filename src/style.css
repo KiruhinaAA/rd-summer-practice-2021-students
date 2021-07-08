@@ -116,7 +116,7 @@ box-sizing: border-box;
 .clock {
     float: center;
     text-align: center;
-    font-size: 170%;
+    font-size: 230%;
     margin-top: 10px;
 
 }
@@ -124,12 +124,7 @@ box-sizing: border-box;
     text-align: left;
     float: right; 
     margin-top: 20px;
-<<<<<<< HEAD
-    margin-right:70px;
-    color: white;
-=======
     margin-left:60px;
->>>>>>> e5a865f822e6b6d922d3f3976133504dd4b78464
 } 
 .left-team-data { 
     text-align: left;

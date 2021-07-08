@@ -63,6 +63,7 @@ text-align: center;
     right: 225px; 
     bottom: 6%;
 box-sizing: border-box;
+
 } 
 .right { 
    
@@ -77,6 +78,7 @@ box-sizing: border-box;
     
 } 
 .btn-red { 
+    margin-left: 10px;
     height:40px;
     width:150px;
     border-color:rgb(228, 79, 79) ; 
@@ -84,6 +86,7 @@ box-sizing: border-box;
     background-color:rgb(92, 87, 87);
 } 
 .btn-st { 
+    margin-left: 10px;
     background-color:rgb(92, 87, 87) ;
     color:white;
     border-color:white; 
@@ -121,8 +124,12 @@ box-sizing: border-box;
     text-align: left;
     float: right; 
     margin-top: 20px;
+<<<<<<< HEAD
     margin-right:70px;
     color: white;
+=======
+    margin-left:60px;
+>>>>>>> e5a865f822e6b6d922d3f3976133504dd4b78464
 } 
 .left-team-data { 
     text-align: left;

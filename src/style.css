@@ -1,6 +1,7 @@
 body { 
     margin: 0; 
     padding: 0; 
+    background-color:rgb(92, 87, 87);
 } 
 a, li, button { 
     cursor: pointer; 
@@ -47,9 +48,7 @@ a, li, button {
     color:white;
     border-color:white; 
 } 
-.btn-warn { 
-    background-color: ; 
-} 
+
 .map { 
    
 } 

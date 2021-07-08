@@ -94,10 +94,12 @@ box-sizing: border-box;
    
 } 
 .right-team-data { 
-    text-align: left; 
+    text-align: right;
+    float: right; 
 } 
 .left-team-data { 
-    text-align: left; 
+    text-align: left;
+    float: left;  
 } 
 .team-data-label { 
     font-size: 110%; 

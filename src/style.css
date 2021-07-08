@@ -1,0 +1,73 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+} 
+a, li, button { 
+    cursor: pointer; 
+} 
+.dark { 
+    background: 1111; 
+} 
+.container { 
+    
+} 
+.header, .center, .footer,  { 
+
+} 
+.header { 
+   
+} 
+.center { 
+    
+} 
+.left { 
+    
+} 
+.right { 
+   
+} 
+.footer { 
+   
+} 
+.dialog-group { 
+  
+} 
+.dialog-group > button { 
+    
+} 
+.btn-green { 
+    background-color: ; 
+} 
+.btn-dialog { 
+    background-color: ; 
+} 
+.btn-warn { 
+    background-color: ; 
+} 
+.map { 
+   
+} 
+.team-data { 
+    text-align: left; 
+} 
+.team-data-label { 
+    font-size: 110%; 
+} 
+.team-caption { 
+    
+} 
+.team-data-value { 
+    font-style: italic; 
+} 
+.log-box { 
+   
+} 
+.input-group { 
+    margin-bottom: 25px; 
+} 
+.progress { 
+    
+} 
+.progress-bar { 
+  
+} 

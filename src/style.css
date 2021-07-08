@@ -3,80 +3,7 @@ body {
     padding: 0; 
     background-color:rgb(92, 87, 87);
 } 
-a, li, button { 
-    cursor: pointer; 
-} 
-.dark { 
-    background:; 
-} 
-.container { 
-    position: absolute;
 
-margin: auto;
-
-padding: 0;
-
-top: 2.5%; left: 0; right: 0;
-
-height: 95%;
-
-width: 80%;
-
-border: 0;
-
-box-shadow: 0 0 25px 5px #ccc;
-
-color: black;
-
-min-height: 460px;
-
-min-width: 770px;
-
-max-width: 1150px;
-
-background-color: rgb(92, 87, 87);
-} 
-.header, .center, .footer,  { 
-
-} 
-.header { 
-    position: absolute;
-
-    margin: auto;
-    
-    box-sizing: border-box;
-} 
-.center { 
-    margin: 0 1% 0 1%;
-
-border-bottom: 1px solid #ccc;
-
-top: 0; left: 0; right: 0;
- 
-height: 15%;
-
-text-align: center;
-} 
-.left { 
-    top: 15%; 
-    left: 225px; 
-    right: 225px; 
-    bottom: 6%;
-box-sizing: border-box;
-
-} 
-.right { 
-   
-} 
-.footer { 
-   
-} 
-.dialog-group { 
-  
-} 
-.dialog-group > button { 
-    
-} 
 .btn-red { 
     margin-left: 10px;
     height:40px;
@@ -92,9 +19,6 @@ box-sizing: border-box;
     border-color:white; 
 } 
 
-.map { 
-   
-} 
 .wrapl{
     width: 200px;
     height: 100px;
@@ -134,6 +58,7 @@ box-sizing: border-box;
     margin-left: 30px;
     color: white;  
 } 
+
 .team-data-label { 
     font-size: 110%; 
 } 
@@ -146,9 +71,7 @@ box-sizing: border-box;
     overflow: hidden;
     white-space: nowrap;
 } 
-.team-data-value { 
-    font-style: italic; 
-} 
+
 .rectangle {
     background: darkgray;
     color: #fff;
@@ -161,15 +84,3 @@ box-sizing: border-box;
     margin-top: 20px;
     
 }
-.log-box { 
-   
-} 
-.input-group { 
-    margin-bottom: 25px; 
-} 
-.progress { 
-    
-} 
-.progress-bar { 
-  
-} 

@@ -25,13 +25,15 @@ border: 0;
 
 box-shadow: 0 0 25px 5px #ccc;
 
-color: white;
+color: black;
 
 min-height: 460px;
 
 min-width: 770px;
 
 max-width: 1150px;
+
+background-color: grey;
 } 
 .header, .center, .footer,  { 
 
@@ -59,7 +61,7 @@ text-align: center;
     left: 225px; 
     right: 225px; 
     bottom: 6%;
-    box-sizing: border-box;
+box-sizing: border-box;
 } 
 .right { 
    
@@ -91,14 +93,23 @@ text-align: center;
 .map { 
    
 } 
-.team-data { 
+.right-team-data { 
+    text-align: left; 
+} 
+.left-team-data { 
     text-align: left; 
 } 
 .team-data-label { 
     font-size: 110%; 
 } 
 .team-caption { 
-    
+    font-size: 130%;
+    font-weight: bold;
+    max-width: 200px;-ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 } 
 .team-data-value { 
     font-style: italic; 

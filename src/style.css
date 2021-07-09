@@ -1,0 +1,86 @@
+body { 
+    margin: 0; 
+    padding: 0; 
+    background-color:rgb(92, 87, 87);
+} 
+
+.btn-red { 
+    margin-left: 10px;
+    height:40px;
+    width:150px;
+    border-color:rgb(228, 79, 79) ; 
+    color:rgb(228, 79, 79);
+    background-color:rgb(92, 87, 87);
+} 
+.btn-st { 
+    margin-left: 10px;
+    background-color:rgb(92, 87, 87) ;
+    color:white;
+    border-color:white; 
+} 
+
+.wrapl{
+    width: 200px;
+    height: 100px;
+    background: darkgray;
+    margin-left: 10px;
+    border-radius: 5px;
+    float: left;
+}
+
+.wrapr{
+    width: 200px;
+    height: 100px;
+    background: darkgray;
+    margin-right: 10px;
+    border-radius: 5px;
+    float: right;
+    text-align: left;
+}
+.clock {
+    float: center;
+    text-align: center;
+    font-size: 170%;
+    margin-top: 10px;
+    color: white;
+}
+.right-team-data { 
+    text-align: left;
+    float: right; 
+    margin-top: 20px;
+    margin-right: 80px;
+    color: white;  
+} 
+.left-team-data { 
+    text-align: left;
+    float: left;
+    margin-top: 20px;
+    margin-left: 30px;
+    color: white;  
+} 
+
+.team-data-label { 
+    font-size: 110%; 
+} 
+.team-caption { 
+    font-size: 130%;
+    font-weight: bold;
+    max-width: 200px;-ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+} 
+
+.rectangle {
+    background: darkgray;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    float: center;
+    width: 985px;
+    height: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    
+}

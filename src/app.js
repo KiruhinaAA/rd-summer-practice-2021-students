@@ -758,50 +758,50 @@
                  *  можно использовать $('selector')
                  */
                 return {
-                    // $gameCaption: ,
-                    // $switchTimer: ,
-                    // team1: {
-                    //     $container: ,
-                    //     $caption: ,
+                    // $gameCaption: $('gameCaption'),
+                    $switchTimer: $('#switchTimer'),
+                    team1: {
+                        $container: $('#teamFirst') ,
+                        $caption: $('nameFirst') ,
                     //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
-                    // team2: {
-                    //     $container: ,
-                    //     $caption: ,
+                        $lives: $('#lifesFirst') ,
+                        $coins: $('#coinsFirst')
+                    },
+                    team2: {
+                        $container: $('#teamSecond') ,
+                        $caption: $('nameSecond'),
                     //     $players: ,
-                    //     $lives: ,
-                    //     $coins:
-                    // },
-                    // mapBuffer: null,
-                    // $mapCanvas: ,
-                    // mapCellSize: 25
+                        $lives: $('#lifesSecond'),
+                        $coins: $('#coinsSecond')
+                    },
+                     mapBuffer: null,
+                     $mapCanvas: $('#gameCanvas'),
+                     mapCellSize: 25
                 };
             }
             function getButtons() {
                 // TODO Task1.2 Объявление переменных и их связка с DOM
                 return {
-                    // $btnGameList:,
-                    // $btnStart:,
-                    // $btnConnect:,
-                    // $btnConnectPolice:,
-                    // $btnConnectThief:,
-                    // $btnLeave:,
-                    // $btnPause:,
-                    // $btnCancel:
+                    $btnGameList: $('#btnGotolistgame'),
+                    $btnStart: $('#btnStart'),
+                    $btnConnect: $('#btnJoinRandom'),
+                    $btnConnectPolice: $('#btnJoinPolice'),
+                    $btnConnectThief: $('#btnJoinThief'),
+                    $btnLeave: $('#btnLeave'),
+                    $btnPause: $('#btnStop'),
+                    $btnCancel: $('#btnInterrupt')
                 };
             }
             function getImages() {
                 // TODO Task1.3 Объявление переменных и их связка с DOM
                 return {
-                    // imgHeart: ,
-                    // imgCoin: ,
-                    // imgPolice: ,
-                    // imgPoliceSelf: ,
-                    // imgThief: ,
-                    // imgThiefSelf: ,
-                    // imgSwitch:
+                    imgHeart: $('#img_heart').get(),
+                    imgCoin: $('#img_coin').get(),
+                    imgPolice: $('#img_police').get(),
+                    imgPoliceSelf: $('#img_police_self').get(),
+                    imgThief: $('#img_thief').get(),
+                    imgThiefSelf: $('#img_thief_self').get(),
+                    imgSwitch: $('#img_switch').get()
                 };
             }
             function setMapCanvasSizing($canvas, width, height) {

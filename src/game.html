@@ -1,41 +1,50 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <meta charset="utf-8"> 
-    <title>Полицейские и мошенники</title> 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Полицейские и мошенники</title>
     <link rel="stylesheet" href="style.css" type="text/css"/>
     <!--  TODO: Раскомментировать при начале работы с сервером -->
-<!--    <script src="modernizr.js"></script>-->
-<!--    <script src="/js/jquery.js"></script>-->
-<!--    <script src="/js/jquery.signalR.js"></script>-->
-<!--    <script src="/js/gameApi.js"></script>--> 
-</head> 
-<body> 
+    <!--    <script src="modernizr.js"></script>-->
+    <!--    <script src="/js/jquery.js"></script>-->
+    <!--    <script src="/js/jquery.signalR.js"></script>-->
+    <!--    <script src="/js/gameApi.js"></script>-->
+</head>
+<body>
 <!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+<div class="app">
+    <div class="rectangle"></div>
+    <div class="clock">00:00</div>
+
+    <div class="wrapl">
+        <div class="left-team-data">
+        <div class="team-data-label">Команда <span>1</span></div>
+        <div class="team-data-label">Жизни: <span>0</span></div>
+        <div class="team-data-label">Монеты: <span>0</span></div>
+    </div></div>
+
+    <div style="width: 67%; height: 370px; background: yellow">место для канвас</div>
     
-         <div class="rectangle"> </div>
-         <div class="clock">00:00</div>
-         <div class="wrapl">Команда 1</div>
-                <div class="team-data-label">Жизни: <span>0</span></div>
-                <div class="team-data-label">Монеты: <span>0</span></div>
-            
-            <div class="wrapr">Команда 2</div>
-                <div class="team-data-label">Жизни: <span> 0</span></div>
-                <div class="team-data-label">Монеты: <span>0</span></div>         
-             
-                <button  class="btn-st">К списку игр</button>
-                <button  class="btn-st">Начать игру</button>
-                <button  class="btn-st">Подключиться к игре (случайно)</button> 
-                <button  class="btn-st">Подключиться к полиции</button> 
-                <button  class="btn-st">Подключиться к мошенникам</button> 
-                <button  class="btn-st">Покинуть игру</button>  
-                <button  class="btn-st">Пауза</button> 
-                <p>
-                    <button class="btn-red">Прервать игру</button> 
-                </p>   
-            
-        </div> 
-    </div> 
+    <div class="wrapr">
+        <div class="right-team-data">
+        <div class="team-data-label">Команда <span>2</span></div>
+        <div class="team-data-label">Жизни: <span>0</span></div>
+        <div class="team-data-label">Монеты: <span>0</span></div>
+    </div></div>
+
+    <div class="team-data-label">
+        <button class="btn-st">К списку игр</button>
+        <button class="btn-st">Начать игру</button>
+        <button class="btn-st">Подключиться к игре (случайно)</button>
+        <button class="btn-st">Подключиться к полиции</button>
+        <button class="btn-st">Подключиться к мошенникам</button>
+        <button class="btn-st">Покинуть игру</button>
+        <button class="btn-st">Пауза</button>
+    <p>
+        <button class="btn-red">Прервать игру</button>
+    </p>
+    </div>
+</div>
 
 <!--  TODO: Раскомментировать при начале работы с сервером -->
 <!--<script src="app.js"></script>-->
@@ -52,5 +61,5 @@
 <!--    })();-->
 
 <!--</script>-->
-</body> 
-</html> 
+</body>
+</html>

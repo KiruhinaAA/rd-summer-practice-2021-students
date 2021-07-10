@@ -81,8 +81,11 @@ body {
     height: 370px; 
     background: yellow"
 }
-div.loading,
-div.loadError
+.loading,
+.loadError
 {
     text-align: center;
+}
+.hidden {
+    display: none;
 }

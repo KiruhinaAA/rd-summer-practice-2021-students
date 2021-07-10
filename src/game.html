@@ -11,49 +11,56 @@
        <script src="/js/gameApi.js"></script>
        <title>Игра - Полицейские и Мошенники</title>
 </head>
+
 <body>
 <!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
-<div id="loading" class="loading">
-    <h2>loading</h2>
-</div>
-<div id="app">
-    <div class="rectangle"></div>
-    <div id="clock"><span id="switchTimer">00:00</span></div>
 
-    <div class="wrapl">
-        <div class="left-team-data">
-        <div class="team-data-label">Команда <span id="nameFirst">1</span></div>
-        <div class="team-data-label">Жизни: <span id="lifesFirst">0</span></div>
-        <div class="team-data-label">Монеты: <span id="coinsFirst">0</span></div>
-        </div>
+    <div id="loading" class="loading hidden">
+        <h2>loading</h2>
     </div>
+
+    <div id='loadError' class="loadError hidden" >
+        <h3>loadError</h3>
+    </div>
+
+    <div id="app">
+        <div class="rectangle"></div>
+        <div id="clock"><span id="switchTimer">00:00</span></div>
+
+        <div class="wrapl">
+            <div class="left-team-data">
+                <div class="team-data-label">Команда <span id="nameFirst">1</span></div>
+                <div class="team-data-label">Жизни: <span id="lifesFirst">0</span></div>
+                <div class="team-data-label">Монеты: <span id="coinsFirst">0</span></div>
+            </div>
+        </div>
 
     <!--<div style="width: 65%; height: 370px; background: yellow">место для канвас</div>-->
-    <div id="map">
-        <canvas id="gameCanvas"> сanvas</canvas>
-    </div>
+        <div id="map">
+            <canvas id="gameCanvas"> сanvas</canvas>
+        </div>
     
-    <div class="wrapr">
-        <div class="right-team-data">
-        <div class="team-data-label">Команда <span id="nameSecond">2</span></div>
-        <div class="team-data-label">Жизни: <span id="lifesSecond">0</span></div>
-        <div class="team-data-label">Монеты: <span id="coinsSecond">0</span></div>
-        </div>    
-    </div>
+        <div class="wrapr">
+            <div class="right-team-data">
+                <div class="team-data-label">Команда <span id="nameSecond">2</span></div>
+                <div class="team-data-label">Жизни: <span id="lifesSecond">0</span></div>
+                <div class="team-data-label">Монеты: <span id="coinsSecond">0</span></div>
+            </div>    
+        </div>
     
-    <div id="controls">
-        <button id="btnGotolistgame" class="btn-st">К списку игр</button>
-        <button id="btnStart" class="btn-st">Начать игру</button>
-        <button id="btnJoinRandom" class="btn-st">Подключиться к игре (случайно)</button>
-        <button id="btnJoinPolice" class="btn-st">Подключиться к полиции</button>
-        <button id="btnJoinThief" class="btn-st">Подключиться к мошенникам</button>
-        <button id="btnLeave" class="btn-st">Покинуть игру</button>
-        <button id="btnStop" class="btn-st">Пауза</button>
-        <button id="btnInterrupt" class="btn-red">Прервать игру</button>
-    </div>
+        <div id="controls">
+            <button id="btnGotolistgame" class="btn-st">К списку игр</button>
+            <button id="btnStart" class="btn-st">Начать игру</button>
+            <button id="btnJoinRandom" class="btn-st">Подключиться к игре (случайно)</button>
+            <button id="btnJoinPolice" class="btn-st">Подключиться к полиции</button>
+            <button id="btnJoinThief" class="btn-st">Подключиться к мошенникам</button>
+            <button id="btnLeave" class="btn-st">Покинуть игру</button>
+            <button id="btnStop" class="btn-st">Пауза</button>
+            <button id="btnInterrupt" class="btn-red">Прервать игру</button>
+        </div>
 
-<div class="hidden">
-    <img id="img_heart"
+        <div class="hidden">
+            <img id="img_heart"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
 yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIH
 g9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Igp2aWV3Qm94PSIwIDAgM

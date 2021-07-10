@@ -1176,22 +1176,116 @@
                  *    this.state.getPlayer(currentUserId) - пользователь в игре?
                  *    this.btns - кнопки тут
                  */
-                
+                 status = status || this.state.status;
+                 var btns = this.btns;
+                 if (status === GameApi.GameStatus.canceled || status === GameApi.GameStatus.finished) {
+                     btns.$btnStart.addClass("hidden");
+                     btns.$btnLeave.addClass("hidden");
+                     btns.$btnPStop.addClass("hidden");
+                     btns.$btnInterrupt.addClass("hidden");
+                     btns.$btnJoinRandom.addClass("hidden");
+                     btns.$btnJoinThief.addClass("hidden");
+                     btns.$btnJoinPolice.addClass("hidden");
+                     return;
+                 }
+                 var currentUser = this.state.gameApi.questor.user.id;
+                 var isOwner = currentUser === this.state.owner.id;
+                 var isAdmin = this.state.gameApi.questor.user.isAdmin;
+                 var connected = this.state.getPlayer(currentUser) ? true : false;
+ 
+                 if (this.state.status === GameApi.GameStatus.open ||
+                     this.state.status === GameApi.GameStatus.ready) {
+                     btns.$btnPause.addClass("hidden");
+                     if (isOwner) {
+                         btns.$btnStart.removeClass("hidden");
+                         btns.$btnInterrupt.removeClass("hidden");
+                     }
+                     else {
+                         btns.$btnStart.addClass("hidden");
+                         if (isAdmin) {
+                             btns.$btnInterrupt.removeClass("hidden");
+                         } else {
+                             btns.$btnInterrupt.addClass("hidden");
+                         }
+                     }
+                     if (connected) {
+                         btns.$btnLeave.removeClass("hidden");
+                         btns.$btnJoinRandom.addClass("hidden");
+                         btns.$btnJoinThief.addClass("hidden");
+                         btns.$btnJoinPolice.addClass("hidden");
+                     }
+                     else {
+                         btns.$btnLeave.addClass("hidden");
+                         btns.$btnJoin.removeClass("hidden");
+                         btns.$btnJoinThief.removeClass("hidden");
+                         btns.$btnJoinPolice.removeClass("hidden");
+                     }
+                     return;
+                 }
+                 if (this.state.status === GameApi.GameStatus.starting ||
+                     this.state.status === GameApi.GameStatus.inProcess) {
+                     btns.$btnStart.addClass("hidden");
+                     btns.$btnLeave.addClass("hidden");
+                     btns.$btnJoinRandom.addClass("hidden");
+                     btns.$btnJoinPolice.addClass("hidden");
+                     btns.$btnJoinThief.addClass("hidden");
+                     if (isOwner) {
+                         btns.$btnStop.removeClass("hidden");
+                         btns.$btnInterrupt.removeClass("hidden");
+                     }
+                     else {
+                         btns.$btnStop.addClass("hidden");
+                         if (isAdmin) {
+                             btns.$btnInterrupt.removeClass("hidden");
+                         } else {
+                             btns.$btnInterrupt.addClass("hidden");
+                         }
+                     }
+                 }
+                 else {
+                     if (isOwner) {
+                         btns.$btnStart.removeClass("hidden");
+                         btns.$btnInterrupt.removeClass("hidden");
+                     }
+                     else {
+                         btns.$btnStart.addClass("hidden");
+                         if (isAdmin) {
+                             btns.$btnInterrupt.removeClass("hidden");
+                         } else {
+                             btns.$btnInterrupt.addClass("hidden");
+                         }
+                     }
+                     btns.$btnStop.addClass("hidden");
+                     btns.$btnLeave.addClass("hidden");
+                     btns.$btnJoinRandom.addClass("hidden");
+                     btns.$btnJoinThief.addClass("hidden");
+                     btns.$btnJoinPolice.addClass("hidden");
+                 }
             };
             GameView.prototype.showLoading = function () {
                 /**
                  * TODO: Task 9. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                 this.$container.addClass("hidden");
+                 this.$error.addClass("hidden");
+                 this.$loading.removeClass("hidden");
             };
             GameView.prototype.showError = function () {
                 /**
                  * TODO: Task 10. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                 this.$container.addClass("hidden");
+                 this.$loading.addClass("hidden");
+                 this.$error.removeClass("hidden");
             };
             GameView.prototype.show = function () {
                 /**
                  * TODO: Task 11. Опишите доступность элементов при загрузке игры $container $error $loading
                  */
+                this.$container.removeClass("hidden");
+                 this.$loading.addClass("hidden");
+                 this.$error.addClass("hidden");
+                 
             };
 
             return GameView;

@@ -81,3 +81,8 @@ body {
     height: 370px; 
     background: yellow"
 }
+div.loading,
+div.loadError
+{
+    text-align: center;
+}

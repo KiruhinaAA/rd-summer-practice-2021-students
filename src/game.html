@@ -13,6 +13,9 @@
 </head>
 <body>
 <!-- TODO: Task 0. Построить вёрстку приложения по макету используя для сетки bootstrap -->
+<div id="loading" class="loading">
+    <h2>loading</h2>
+</div>
 <div id="app">
     <div class="rectangle"></div>
     <div id="clock"><span id="switchTimer">00:00</span></div>
@@ -125,19 +128,19 @@ go8L3N2Zz4="/>
 </div>
 
 <!-- TODO: Раскомментировать при начале работы с сервером -->
-<!--<script src="app.js"></script>-->
-<!--<script>-->
-<!--    (function() {-->
-<!--        var gameApi = new GameApi();-->
-<!--        gameApi.questor.on("unauthorized", function () {-->
-<!--            window.location.replace("../login");-->
-<!--        });-->
-<!--        gameApi.questor.login();-->
-<!--        var gameState = new app.game.GameState(gameApi);-->
-<!--        new app.game.GameView($("#game"), $("#loading"), $("#loadError"), gameState);-->
-<!--        gameState.request();-->
-<!--    })();-->
+<script src="app.js"></script>
+<script>
+    (function() {
+        var gameApi = new GameApi();
+        gameApi.questor.on("unauthorized", function () {
+            window.location.replace("../login");
+        });
+        gameApi.questor.login();
+        var gameState = new app.game.GameState(gameApi);
+        new app.game.GameView($("#app"), $("#loading"), $("#loadError"), gameState);
+        gameState.request();
+    })();
 
-<!--</script>-->
+    </script>
 </body>
 </html>

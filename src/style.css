@@ -38,7 +38,7 @@ body {
     text-align: left;
     width: calc(70%-20px);
 }
-.clock {
+#clock {
     width:100%;
     text-align: center;
     font-size: 170%;
@@ -59,11 +59,11 @@ body {
     color: white;  
 } 
 
-.team-data-label { 
+#control { 
     font-size: 110%;     
 } 
 
-.rectangle {
+#rectangle {
     background: darkgray;
     color: #fff;
     padding: 10px;
@@ -72,7 +72,12 @@ body {
     height: 10px;
     margin: 20px 10px 10px;
 }
-.app{
+#app{
     display:flex;
     flex-wrap: wrap;
+}
+#map{
+    width: 65%; 
+    height: 370px; 
+    background: yellow"
 }

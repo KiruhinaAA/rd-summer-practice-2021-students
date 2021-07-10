@@ -808,6 +808,8 @@
                 /**
                  * TODO Task 2. Опишите функцию которая задаст размеры игрового поля
                  */
+                $canvas.width(width);
+                $canvas.height(height); 
                 return $canvas;
             }
             function drawMapField(canvas, map, width, height, cellSize) {
@@ -861,8 +863,10 @@
                  *              повешайте обработчики событий на кнопки
                  *              нажатия на кнопки это событие click
                  */
-                // var c = this.state.callbacks;
-                // c.captionChanged
+                 var c = this.state.callbacks;
+                 c.captionChanged.add(function(name,status){
+                     this.setGameCaption(name, status);
+                 }.bind(this))
                 // c.invalidGame
                 // c.mapChanged
                 // c.playerChanged
@@ -874,19 +878,39 @@
                 // c.teamLivesChanged
                 // c.teamPlayersChanged
                 // c.timerChanged
+                мфк
             };
             GameView.prototype.bindButtons = function () {
                 // TODO Task 3.1 повешайте обработчики событий
-                // var btns = this.btns;
-                // var $lastKey = -1;
-                // btns.$btnGameList.
-                // btns.$btnStart.
-                // btns.$btnConnect.
-                // btns.$btnConnectPolice.
+                var btns = this.btns;
+                var $lastKey = -1;
+                btns.$btnGameList.
+                btns.$btnStart.btns.$btnGameList.click(function () {
+                    window.location.replace("index.html");
+                });
+                btns.$btnStart.click(function () {
+                    this.state.game.start();
+                }.bind(this));
+                
+                btns.$btnConnect.click(function () {
+                    this.state.game.connected();
+                }.bind(this));
+                
+                btns.$btnConnectPolice.click(function () {
+                    this.state.game.connected();
+                }.bind(this));
+                
                 // btns.$btnConnectThief.
                 // btns.$btnLeave.
-                // btns.$btnPause.
-                // btns.$btnCancel.
+                
+                btns.$btnPause.click(function () {
+                    this.state.game.pause();
+                }.bind(this));
+             
+                btns.$btnCancel.click(function () {
+                    this.state.game.cancel();
+                }.bind(this));
+                
                 $(window).on('keydown', function(event) {
                     if ($lastKey === event.keyCode) {
                         return;
@@ -894,7 +918,7 @@
                     /**
                      * TODO Task 4. Вместо event.keyCode начните использовать event.key
                      */
-                    switch (event.keyCode) {
+                    /*switch (event.keyCode) {
                         case 32:
                             event.preventDefault();
                             this.state.game.stopMoving();
@@ -914,7 +938,28 @@
                         case 40:
                             event.preventDefault();
                             this.state.game.beginMove(GameApi.MoveDirection.bottom);
-                            break;
+                            break;*/
+                            switch (event.keyCode) {
+                                case "Space": //32 space
+                                    event.preventDefault();
+                                    this.state.game.stopMoving();
+                                    break;
+                                case "ArrowLeft":  //37 left
+                                    event.preventDefault();
+                                    this.state.game.beginMove(GameApi.MoveDirection.left);
+                                    break;
+                                case "ArrowUp": // 38 up
+                                    event.preventDefault();
+                                    this.state.game.beginMove(GameApi.MoveDirection.top);
+                                    break;
+                                case "ArrowRight": //39 right
+                                    event.preventDefault();
+                                    this.state.game.beginMove(GameApi.MoveDirection.right);
+                                    break;
+                                case "ArrowDown": //40 down
+                                    event.preventDefault();
+                                    this.state.game.beginMove(GameApi.MoveDirection.bottom);
+                                    break;
                     }
                     //console.log(event);
                 }.bind(this));

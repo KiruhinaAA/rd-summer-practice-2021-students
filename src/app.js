@@ -866,20 +866,54 @@
                  *              нажатия на кнопки это событие click
                  */
                  var c = this.state.callbacks;
-                 c.captionChanged.add(function(name,status){
-                     this.setGameCaption(name, status);
-                 }.bind(this))
-                // c.invalidGame
-                // c.mapChanged
-                // c.playerChanged
-                // c.statusChanged
-                // c.synced
-                // c.syncing
-                // c.teamCaptionChanged
-                // c.teamCoinsChanged
-                // c.teamLivesChanged
-                // c.teamPlayersChanged
-                // c.timerChanged
+                c.captionChanged.add(function (name, status){
+                    this.setGameCaption(name, status);
+                }.bind(this));
+                
+                c.invalidGame.add(function () {
+                    this.showError();
+                }.bind(this));
+                
+                c.mapChanged.add(function (map) {
+                    this.updateMap(map);
+                }.bind(this));
+                
+                c.playerChanged.add(function (player) {
+                    this.updatePlayer(player);
+                }.bind(this));
+                
+                c.statusChanged.add(function (status) {
+                    this.setButtons(status);
+                    this.toggleRotation(status);
+                }.bind(this));
+                
+                c.synced.add(function () {
+                    this.show();
+                }.bind(this));
+                
+                c.syncing.add(function () {
+                    this.showLoading();
+                }.bind(this));
+                
+                c.teamCaptionChanged.add(function (team) {
+                    this.updateTeamCaption(team);
+                }.bind(this));
+                
+                c.teamCoinsChanged.add(function (team) {
+                    this.updateTeamCoins(team);
+                }.bind(this));
+                
+                c.teamLivesChanged.add(function (team) {
+                    this.updateTeamLives(team);
+                }.bind(this));
+                
+                c.teamPlayersChanged.add(function (team) {
+                    this.updateTeam(team);
+                }.bind(this));
+                
+                c.timerChanged.add(function (data) {
+                    this.setTimer(data);
+                }.bind(this));
             };
             GameView.prototype.bindButtons = function () {
                 // TODO Task 3.1 повешайте обработчики событий

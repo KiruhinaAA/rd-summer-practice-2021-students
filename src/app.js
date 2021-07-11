@@ -758,7 +758,7 @@
                  *  можно использовать $('selector')
                  */
                 return {
-                    // $gameCaption: $('gameCaption'),
+                    //$gameCaption: $('gameCaption'),
                     $switchTimer: $('#switchTimer'),
                     team1: {
                         $container: $('#teamFirst') ,
@@ -795,13 +795,13 @@
             function getImages() {
                 // TODO Task1.3 Объявление переменных и их связка с DOM
                 return {
-                    imgHeart: $('#img_heart').get(),
-                    imgCoin: $('#img_coin').get(),
-                    imgPolice: $('#img_police').get(),
-                    imgPoliceSelf: $('#img_police_self').get(),
-                    imgThief: $('#img_thief').get(),
-                    imgThiefSelf: $('#img_thief_self').get(),
-                    imgSwitch: $('#img_switch').get()
+                    imgHeart: $('#img_heart').get(0),
+                    imgCoin: $('#img_coin').get(0),
+                    imgPolice: $('#img_police').get(0),
+                    imgPoliceSelf: $('#img_police_self').get(0),
+                    imgThief: $('#img_thief').get(0),
+                    imgThiefSelf: $('#img_thief_self').get(0),
+                    imgSwitch: $('#img_switch').get(0)
                 };
             }
             function setMapCanvasSizing($canvas, width, height) {
@@ -932,7 +932,7 @@
                 }.bind(this));
                 
                 btns.$btnjoinPolice.click(function () {
-                    this.state.game.connected();
+                    this.state.game.join(gameApi.GameTeamRole.police);
                 }.bind(this));
                 
                 btns.$btnJoinThief.click(function () {

@@ -23,30 +23,33 @@
         <h3>loadError</h3>
     </div>
 
-    
-    <div id="app">
-        <div class="rectangle"></div> 
-        <div id="clock"><span id="switchTimer">00:00</span></div>
+   <div id="game"> 
+         <div id="app">
+            <div class="rectangle"></div> 
+            <div id="gameCaption"></div>
+            <div id="clock"><span id="switchTimer">00:00</span></div>
 
-        <div class="wrapl">
-            <div class="left-team-data">
-                <div class="team-data-label">Команда <span id="nameFirst">1</span></div>
-                <div class="team-data-label">Жизни: <span id="lifesFirst">0</span></div>
-                <div class="team-data-label">Монеты: <span id="coinsFirst">0</span></div>
+            <div class="wrapl">
+                <div id="left-team-data">
+                    <div class="team-data-label">Команда <span id="nameFirst">1</span></div>
+                    <div class="team-data-label">Жизни: <span id="lifesFirst">0</span></div>
+                    <div class="team-data-label">Монеты: <span id="coinsFirst">0</span></div>
+                    <div id="team1users" class="team-data-label" ></div>
+                </div>
             </div>
-        </div>
 
-    <!--<div style="width: 65%; height: 370px; background: yellow">место для канвас</div>-->
-        <div id="map">
-            <canvas id="gameCanvas"> сanvas</canvas>
-        </div>
+            <!--<div style="width: 65%; height: 370px; background: yellow">место для канвас</div>-->
+            <div id="map">
+                <canvas id="gameCanvas"> сanvas</canvas>
+            </div>
     
-        <div class="wrapr">
-            <div class="right-team-data">
-                <div class="team-data-label">Команда <span id="nameSecond">2</span></div>
-                <div class="team-data-label">Жизни: <span id="lifesSecond">0</span></div>
-                <div class="team-data-label">Монеты: <span id="coinsSecond">0</span></div>
-            </div>    
+            <div class="wrapr">
+                <div id="right-team-data">
+                    <div class="team-data-label">Команда <span id="nameSecond">2</span></div>
+                    <div class="team-data-label">Жизни: <span id="lifesSecond">0</span></div>
+                    <div class="team-data-label">Монеты: <span id="coinsSecond">0</span></div>
+                <div id="team2users"></div>
+            </div>  
         </div>
     
         <div id="controls">
@@ -62,7 +65,9 @@
             </p>
         </div>
 
-        <div class="hidden">
+    </div>
+        
+    <div class="hidden">
             <img id="img_heart"
          src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJzdmdfaGVhcnQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9
 yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIH

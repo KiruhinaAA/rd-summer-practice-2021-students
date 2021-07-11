@@ -758,19 +758,19 @@
                  *  можно использовать $('selector')
                  */
                 return {
-                    //$gameCaption: $('gameCaption'),
+                    $gameCaption: $('#gameCaption'),
                     $switchTimer: $('#switchTimer'),
                     team1: {
-                        $container: $('#teamFirst') ,
-                        $caption: $('nameFirst') ,
-                    //     $players: ,
+                        $container: $('#left-team-data') ,
+                        $caption: $('#nameFirst') ,
+                        $players: $('#team1users')  ,
                         $lives: $('#lifesFirst') ,
                         $coins: $('#coinsFirst')
                     },
                     team2: {
-                        $container: $('#teamSecond') ,
-                        $caption: $('nameSecond'),
-                    //     $players: ,
+                        $container: $('#right-team-data') ,
+                        $caption: $('#nameSecond'),
+                        $players: $('#team2users')  ,
                         $lives: $('#lifesSecond'),
                         $coins: $('#coinsSecond')
                     },
@@ -919,23 +919,22 @@
                 // TODO Task 3.1 повешайте обработчики событий
                 var btns = this.btns;
                 var $lastKey = -1;
-                btns.$btnGameList.
-                btns.$btnStart.btns.$btnGotolistgame.click(function () {
+                btns.$btnGameList.click(function () {
                     window.location.replace("index.html");
                 });
                 btns.$btnStart.click(function () {
                     this.state.game.start();
                 }.bind(this));
                 
-                btns.$btnJoinRandom.click(function () {
-                    this.state.game.connected();
+                btns.$btnConnect.click(function () {
+                    this.state.game.join(GameApi.GameTeamRole.random);
                 }.bind(this));
                 
-                btns.$btnjoinPolice.click(function () {
-                    this.state.game.join(gameApi.GameTeamRole.police);
+                btns.$btnConnectPolice.click(function () {
+                    this.state.game.join(GameApi.GameTeamRole.police);
                 }.bind(this));
                 
-                btns.$btnJoinThief.click(function () {
+                btns.$btnConnectThief.click(function () {
                     this.state.game.join(GameApi.GameTeamRole.thief);
                 }.bind(this));
                 
@@ -943,11 +942,11 @@
                     this.state.game.leave();
                 }.bind(this));
                 
-                btns.$btnStop.click(function () {
+                btns.$btnPause.click(function () {
                     this.state.game.pause();
                 }.bind(this));
              
-                btns.$btnInterrupt.click(function () {
+                btns.$btnCancel.click(function () {
                     this.state.game.cancel();
                 }.bind(this));
                 
@@ -1092,12 +1091,11 @@
                 /**
                  * TODO: Task 5. Поменяйте под вашу вёрстку
                  */
-                this.game.$gameCaption
-                    .empty()
-                    .append($(app.utils.t(
-                       // "<div class='game-caption-name'>{name} <span class='game-caption-status game-caption-status-{status}'>{statusName}</span></div>",
-                       "<div class='game-caption-name'>{name} <span class='game-caption-status game-caption-status-{status}'>{statusName}</span></div>",
-                       {name: name, status: status, statusName: app.utils.getStatusName(status)})));
+                 this.game.$gameCaption
+                 .empty()
+                 .append($(app.utils.t(
+                     "<div class='game-caption-name'>{name} <span class='game-caption-status game-caption-status-{status}'>{statusName}</span></div>",
+                     {name: name, status: status, statusName: app.utils.getStatusName(status)})));
             };
             GameView.prototype.setTimer = function (data) {
                 var seconds = data.s;
@@ -1122,7 +1120,7 @@
                 /**
                  * TODO: Task 6. Поменяйте под вашу вёрстку
                  */
-                return $(app.utils.t(
+                 return $(app.utils.t(
                     "<div id='player{playerId}' class='game-player game-player-status-{status}'>" +
                         "<span class='game-player-name'>{name}</span>" +
                         " [<span class='game-player-coins'>{coins}</span>;" +
@@ -1158,18 +1156,18 @@
                 /**
                  * TODO: Task 7. Поменяйте под вашу вёрстку
                  */
-                $team.$caption
-                    .empty()
-                    .append(app.utils.t(
-                        "<div class='game-team-{role}-caption'>" +
-                            "<span class='game-team-name'>{name}</span> " +
-                            "<span class='game-team-role game-team-role-{role}'>{roleName}</span>" +
-                        "</div>", {
-                            role: role,
-                            roleName: team.role === GameApi.GameTeamRole.police ? "полиция" : "мошенники",
-                            name: team.name
-                        }
-                    ));
+               $team.$caption
+               .empty()
+               .append(app.utils.t(
+                   "<div class='game-team-{role}-caption'>" +
+                       "<span class='game-team-name'>{name}</span> " +
+                       "<span class='game-team-role game-team-role-{role}'>{roleName}</span>" +
+                   "</div>", {
+                       role: role,
+                       roleName: team.role === GameApi.GameTeamRole.police ? "полиция" : "мошенники",
+                       name: team.name
+                   }
+               ));
             };
             GameView.prototype.setTeam = function (team, $team) {
                 this.setTeamCaption(team, $team);
@@ -1215,11 +1213,11 @@
                  if (status === GameApi.GameStatus.canceled || status === GameApi.GameStatus.finished) {
                      btns.$btnStart.addClass("hidden");
                      btns.$btnLeave.addClass("hidden");
-                     btns.$btnPStop.addClass("hidden");
-                     btns.$btnInterrupt.addClass("hidden");
-                     btns.$btnJoinRandom.addClass("hidden");
-                     btns.$btnJoinThief.addClass("hidden");
-                     btns.$btnJoinPolice.addClass("hidden");
+                     btns.$btnPause.addClass("hidden");
+                     btns.$btnCancel.addClass("hidden");
+                     btns.$btnConnect.addClass("hidden");
+                     btns.$btnConnectThief.addClass("hidden");
+                     btns.$btnConnectPolice.addClass("hidden");
                      return;
                  }
                  var currentUser = this.state.gameApi.questor.user.id;
@@ -1232,27 +1230,27 @@
                      btns.$btnPause.addClass("hidden");
                      if (isOwner) {
                          btns.$btnStart.removeClass("hidden");
-                         btns.$btnInterrupt.removeClass("hidden");
+                         btns.$btnCancel.removeClass("hidden");
                      }
                      else {
                          btns.$btnStart.addClass("hidden");
                          if (isAdmin) {
-                             btns.$btnInterrupt.removeClass("hidden");
+                             btns.$btnCancel.removeClass("hidden");
                          } else {
-                             btns.$btnInterrupt.addClass("hidden");
+                             btns.$btnCancel.addClass("hidden");
                          }
                      }
                      if (connected) {
                          btns.$btnLeave.removeClass("hidden");
-                         btns.$btnJoinRandom.addClass("hidden");
-                         btns.$btnJoinThief.addClass("hidden");
-                         btns.$btnJoinPolice.addClass("hidden");
+                         btns.$btnConnect.addClass("hidden");
+                         btns.$btnConnectPolice.addClass("hidden");
+                         btns.$btnConnectThief.addClass("hidden");
                      }
                      else {
                          btns.$btnLeave.addClass("hidden");
-                         btns.$btnJoin.removeClass("hidden");
-                         btns.$btnJoinThief.removeClass("hidden");
-                         btns.$btnJoinPolice.removeClass("hidden");
+                         btns.$btnConnect.removeClass("hidden");
+                         btns.$btnConnectThief.removeClass("hidden");
+                         btns.$btnConnectPolice.removeClass("hidden");
                      }
                      return;
                  }
@@ -1260,40 +1258,40 @@
                      this.state.status === GameApi.GameStatus.inProcess) {
                      btns.$btnStart.addClass("hidden");
                      btns.$btnLeave.addClass("hidden");
-                     btns.$btnJoinRandom.addClass("hidden");
-                     btns.$btnJoinPolice.addClass("hidden");
-                     btns.$btnJoinThief.addClass("hidden");
+                     btns.$btnConnect.addClass("hidden");
+                     btns.$btnConnectPolice.addClass("hidden");
+                     btns.$btnConnectThief.addClass("hidden");
                      if (isOwner) {
-                         btns.$btnStop.removeClass("hidden");
-                         btns.$btnInterrupt.removeClass("hidden");
+                         btns.$btnPause.removeClass("hidden");
+                         btns.$btnCancel.removeClass("hidden");
                      }
                      else {
-                         btns.$btnStop.addClass("hidden");
+                         btns.$btnPause.addClass("hidden");
                          if (isAdmin) {
-                             btns.$btnInterrupt.removeClass("hidden");
+                             btns.$btnCancel.removeClass("hidden");
                          } else {
-                             btns.$btnInterrupt.addClass("hidden");
+                             btns.$btnCancel.addClass("hidden");
                          }
                      }
                  }
                  else {
                      if (isOwner) {
                          btns.$btnStart.removeClass("hidden");
-                         btns.$btnInterrupt.removeClass("hidden");
+                         btns.$btnCancel.removeClass("hidden");
                      }
                      else {
                          btns.$btnStart.addClass("hidden");
                          if (isAdmin) {
-                             btns.$btnInterrupt.removeClass("hidden");
+                             btns.$btnCancel.removeClass("hidden");
                          } else {
-                             btns.$btnInterrupt.addClass("hidden");
+                             btns.$btnCancel.addClass("hidden");
                          }
                      }
-                     btns.$btnStop.addClass("hidden");
+                     btns.$btnPause.addClass("hidden");
                      btns.$btnLeave.addClass("hidden");
-                     btns.$btnJoinRandom.addClass("hidden");
-                     btns.$btnJoinThief.addClass("hidden");
-                     btns.$btnJoinPolice.addClass("hidden");
+                     btns.$btnConnect.addClass("hidden");
+                     btns.$btnConnectPolice.addClass("hidden");
+                     btns.$btnConnectThief.addClass("hidden");
                  }
             };
             GameView.prototype.showLoading = function () {

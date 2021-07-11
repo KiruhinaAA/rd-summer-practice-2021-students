@@ -79,7 +79,6 @@ body {
 #map{
     width: 65%; 
     height: 370px; 
-    background: yellow;
 }
 .loading,
 .loadError
@@ -88,4 +87,17 @@ body {
 }
 .hidden {
     display: none;
+}
+#gameCaption {
+    width: 100%;
+    align-self: flex-end;
+    color: #ee0d0d;
+    margin: 0px 10px 0px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #424344;
+    height: auto;
+}
+#gameCanvas{
+    display: block;
+    margin: 0 auto;
 }

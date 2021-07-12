@@ -1,0 +1,117 @@
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    background-color:rgb(92, 87, 87);
+} 
+
+.btn-red { 
+    margin-left: 600px;
+    height:40px;
+    border-color:rgb(228, 79, 79) ; 
+    color:rgb(228, 79, 79);
+    background-color:rgb(92, 87, 87);
+} 
+.btn-st { 
+    height:40px;
+    margin-top: 10px;
+    margin-left: 37px;
+    background-color:rgb(92, 87, 87) ;
+    color:white;
+    border-color:white; 
+} 
+
+.wrapl{
+    text-align: left;
+    height: 100px;
+    background: darkgray;
+    margin-left: 20px;
+    border-radius: 5px;
+    width:180px;
+}
+
+.wrapr{
+    margin-right: 10px;
+    height: 100px;
+    background: darkgray;
+    border-radius: 5px;
+    text-align: left;
+    width: 180px;
+}
+#clock {
+    width:100%;
+    text-align: center;
+    font-size: 170%;
+    margin-top: 10px;
+    color: white;
+}
+.right-team-data { 
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 100px;
+    color: white;  
+} 
+.left-team-data { 
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: white;  
+} 
+
+#control { 
+    font-size: 110%;     
+} 
+
+.rectangle {
+    background: darkgray;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    margin: 0px 10px 10px;
+}
+#app{
+    display:flex;
+    flex-wrap: wrap;
+}
+#map{
+    width: 65%; 
+    height: 300px; 
+}
+.loading,
+.loadError
+{
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+#gameCaption {
+    width: 100%;
+    align-self: flex-end;
+    color: #ee0d0d;
+    margin: 0px 10px 0px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #424344;
+    height: auto;
+}
+#gameCanvas{
+    display: block;
+    margin: 0 auto;
+}
+.game-team-police-caption {
+    background-color: #003152;
+}
+.game-team-thief-caption {
+    background-color: #ffd014;
+}
+.game-team-winner {
+    background-color: rgb(224, 80, 80) ;
+}
+.header{
+    text-align: center;
+    color:rgb(216, 127, 127);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}

@@ -101,3 +101,16 @@ body {
     display: block;
     margin: 0 auto;
 }
+.game-team-police-caption {
+    background-color: #0099ff;
+}
+.game-team-thief-caption {
+    background-color: #FFCC00;
+}
+.game-team-winner {
+    background-color: rgb(224, 80, 80) /* !important*/;
+}
+.header{
+    text-align: center;
+    color:red;
+}
